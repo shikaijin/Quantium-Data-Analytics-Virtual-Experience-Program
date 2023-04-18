@@ -2,7 +2,13 @@
 title: "Quantium Virtual Internship - Retail Strategy and Analytics - Task 1"
 mainfont: Roboto
 monofont: Consolas
-output: pdf_document
+output:
+  pdf_document: default
+  html_document:
+  df_print: default
+  highlight: tango
+  keep_tex: yes
+  latex_engine: xelatex
 ---
 
 ```{r setup, include=FALSE}
@@ -110,7 +116,6 @@ transactionData <- transactionData[SALSA == FALSE, ][, SALSA := NULL]
 Next, we can use `summary()` to check summary statistics such as mean, min and max
 values for each feature to see if there are any obvious outliers in the data and if
 there are any nulls in any of the columns
-
 ```{r initial summary}
 #### Summarise the data to check for nulls and possible outliers
 summary(transactionData)
