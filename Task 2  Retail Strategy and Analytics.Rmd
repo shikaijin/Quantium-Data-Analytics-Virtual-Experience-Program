@@ -1,5 +1,5 @@
 ---
-title: ""Quantium Virtual Internship - Retail Strategy and Analytics - Task 2"
+title: "Quantium Virtual Internship - Retail Strategy and Analytics - Task 2"
 mainfont: Roboto
 monofont: Consolas
 output:
@@ -655,7 +655,7 @@ Next, number of customers.
 #### trial store for each month, compared to the control store and other stores.
 measureOverTimeCusts <- measureOverTime
 pastCustomers <- measureOverTime
-pastCustomers <- measureOverTimeCusts[, Store_type := ifelse(STORE_NBR == trail_store,
+pastCustomers <- measureOverTimeCusts[, Store_type := ifelse(STORE_NBR == trial_store,
 "Trial", ifelse(STORE_NBR == control_store, "Control", "Other stores"))
  ][, numberCustomers := mean(nCustomers), by = c("YEARMONTH", "Store_type")
  ][, TransactionMonth := as.Date(paste(YEARMONTH %/% 100, YEARMONTH %% 100, 1, 
